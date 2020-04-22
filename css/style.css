@@ -1,0 +1,7 @@
+html, body{
+  overflow-y: auto;
+}
+
+.inverted{
+  filter: invert(1);
+}

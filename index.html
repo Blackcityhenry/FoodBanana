@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FoodBanana</title>
+  <link rel="shortcut icon" type="image/png" href="img/fav.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.1.7/dist/vuetify.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main id="app">
+    <v-app>
+      <v-app-bar id="headbar" class="yellow darken-1" app>
+        <v-avatar class="mr-3">
+          <v-img class="inverted" src="img/banana.png"></v-img>
+        </v-avatar>
+        <span class="headline white--text">FoodBanana</span>
+      </v-app-bar>
+      <v-content>
+        <v-container class="align-start">
+          <v-row justify="center">
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>汁</v-card-title>
+                <v-radio-group v-model="sauce" :mandatory="true">
+                  <v-radio v-for="s in sauce_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>主菜</v-card-title>
+                <v-radio-group v-model="primary" :mandatory="false">
+                  <v-radio v-for="s in primary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>主菜</v-card-title>
+                <v-radio-group v-model="secondary" :mandatory="false">
+                  <v-radio v-for="s in secondary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>配菜</v-card-title>
+                <v-radio-group v-model="tertiary" :mandatory="false">
+                  <v-radio v-for="s in tertiary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>飯 / 意粉</v-card-title>
+                <v-radio-group v-model="base" :mandatory="false">
+                  <v-radio v-for="rice in base_option" :label="rice" :value="rice" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+
+            <v-col md="2" cols="12">
+              <v-card class="pa-3">
+                <v-card-title>飲品</v-card-title>
+                <v-radio-group v-model="drinks_temp" :mandatory="false">
+                  <v-radio v-for="d in drinks_temp_option" :label="d" :value="d" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+
+                <v-radio-group v-model="drinks" :mandatory="false">
+                  <v-radio v-for="d in drinks_option" :label="d" :value="d" color="yellow darken-1"></v-radio>
+                </v-radio-group>
+              </v-card>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12">
+              <v-card class="pa-3">
+                <v-card-title>我要</v-card-title>
+                <p id="clipboard-target" class="pl-4">
+                  {{ sauce == "" ? " " : sauce + "汁" }}{{ primary }}{{ secondary }}{{ tertiary }}{{ base }}  {{ drinks_temp }}{{ drinks }}
+                </p>
+                <v-divider></v-divider>
+                <v-card-actions>
+                  <v-btn class="grey lighten-2" @click="reset()">Reset</v-btn>
+                  <v-btn class="yellow darken-1 js-clip" data-clipboard-target="#clipboard-target" @click="snackbar = true">Copy</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+
+          <v-snackbar :timeout="3000" v-model="snackbar">已複製</v-snackbar>
+
+        </v-container>
+      </v-content>
+    </v-app>
+  </main>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js" integrity="sha256-NSuqgY2hCZJUN6hDMFfdxvkexI7+iLxXQbL540RQ/c4=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.1.7/dist/vuetify.min.js" integrity="sha256-DlTDGRrlsHPd3HR0Kb0QVxIeBK55rZJA2D+xI+o5c6E=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+</body>
+</html>
