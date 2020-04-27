@@ -37,7 +37,7 @@
             <v-col md="2" cols="12">
               <v-card class="pa-3">
                 <v-card-title>主菜</v-card-title>
-                <v-radio-group v-model="primary" :mandatory="false">
+                <v-radio-group :disabled="secondary!=''" v-model="primary" :mandatory="false">
                   <v-radio v-for="s in primary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
@@ -46,7 +46,7 @@
             <v-col md="2" cols="12">
               <v-card class="pa-3">
                 <v-card-title>主菜</v-card-title>
-                <v-radio-group v-model="secondary" :mandatory="false">
+                <v-radio-group :disabled="primary!=''" v-model="secondary" :mandatory="false">
                   <v-radio v-for="s in secondary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
