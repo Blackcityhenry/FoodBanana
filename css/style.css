@@ -5,3 +5,7 @@ html, body{
 .inverted{
   filter: invert(1);
 }
+
+#clipboard-target{
+  min-height: 24px;
+}
