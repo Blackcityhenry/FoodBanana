@@ -31,7 +31,7 @@
               <v-card class="pa-3">
                 <v-card-title>汁</v-card-title>
                 <v-radio-group v-model="sauce" :mandatory="false">
-                  <v-radio v-for="s in sauce_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="s in sauce_option" :label="s" :value="s" :key="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
@@ -41,7 +41,7 @@
               <v-card class="pa-3">
                 <v-card-title>主菜</v-card-title>
                 <v-radio-group :disabled="secondary!=''" v-model="primary" :mandatory="false">
-                  <v-radio v-for="s in primary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="s in primary_option" :label="s" :value="s" :key="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
@@ -50,7 +50,7 @@
               <v-card class="pa-3">
                 <v-card-title>主菜</v-card-title>
                 <v-radio-group :disabled="primary!=''" v-model="secondary" :mandatory="false">
-                  <v-radio v-for="s in secondary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="s in secondary_option" :label="s" :value="s" :key="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
@@ -59,7 +59,7 @@
               <v-card class="pa-3">
                 <v-card-title>配菜</v-card-title>
                 <v-radio-group v-model="tertiary" :mandatory="false">
-                  <v-radio v-for="s in tertiary_option" :label="s" :value="s" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="s in tertiary_option" :label="s" :value="s" :key="s" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
@@ -68,7 +68,7 @@
               <v-card class="pa-3">
                 <v-card-title>飯 / 意粉</v-card-title>
                 <v-radio-group v-model="base" :mandatory="false">
-                  <v-radio v-for="rice in base_option" :label="rice" :value="rice" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="rice in base_option" :label="rice" :value="rice" :key="rice" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
@@ -77,11 +77,11 @@
               <v-card class="pa-3">
                 <v-card-title>飲品</v-card-title>
                 <v-radio-group v-model="drinks_temp" :mandatory="false">
-                  <v-radio v-for="d in drinks_temp_option" :label="d" :value="d" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="d in drinks_temp_option" :label="d" :value="d" :key="d" color="yellow darken-1"></v-radio>
                 </v-radio-group>
 
                 <v-radio-group :disabled="drinks_temp==''" v-model="drinks" :mandatory="false">
-                  <v-radio v-for="d in drinks_option" :label="d" :value="d" color="yellow darken-1"></v-radio>
+                  <v-radio v-for="d in drinks_option" :label="d" :value="d" :key="d" color="yellow darken-1"></v-radio>
                 </v-radio-group>
               </v-card>
             </v-col>
