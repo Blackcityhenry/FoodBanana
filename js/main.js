@@ -28,6 +28,20 @@ var food = new Vue(
         this.base = '',
         this.drinks_temp = '',
         this.drinks = ''
+      },
+      randomPick(){
+        this.sauce = this.sauce_option[Math.floor(Math.random() * this.sauce_option.length)];
+        this.tertiary = this.tertiary_option[Math.floor(Math.random() * this.tertiary_option.length)];
+        this.base = this.base_option[Math.floor(Math.random() * this.base_option.length)];
+        this.drinks_temp = this.drinks_temp_option[Math.floor(Math.random() * this.drinks_temp_option.length)];
+        this.drinks = this.drinks_option[Math.floor(Math.random() * this.drinks_option.length)];
+        if (Math.random() > 0.5){
+          this.secondary = '';
+          this.primary = this.primary_option[Math.floor(Math.random() * this.primary_option.length)];
+        } else {
+          this.primary = '';
+          this.secondary = this.secondary_option[Math.floor(Math.random() * this.secondary_option.length)];
+        }
       }
     },
     updated(){
